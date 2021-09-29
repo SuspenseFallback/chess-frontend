@@ -1,6 +1,6 @@
 var board;
 var game = new Chess();
-let socket = io("localhost:3000");
+let socket = io("https://peaceful-ridge-17195.herokuapp.com");
 let joinGame = document.querySelector(".join");
 let gameStart = false;
 let color = null;
