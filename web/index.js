@@ -353,7 +353,8 @@ var cfg = {
   onDragStart: onDragStart,
   onDrop: onDrop,
   onSnapEnd: onSnapEnd,
-  pieceTheme: "../img/chesspieces/wood/{piece}.png",
+  pieceTheme:
+    "https://suspensefallback.github.io/chess-frontend/img/chesspieces/wikipedia/{piece}.png",
 };
 board = ChessBoard("board1", cfg);
 
