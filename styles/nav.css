@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@400;600&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #000;
+  text-decoration: none;
+  font-family: "Lato";
+}
+
+nav ul li:hover {
+  background-color: rgba(0, 108, 180, 0.842);
+}
+
+nav ul li {
+  list-style: none;
+  margin-left: -20px;
+  padding-left: 2px;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  cursor: pointer;
+}
+
+nav {
+  background-color: rgba(0, 153, 255, 0.842);
+  width: 50px;
+  top: -17px;
+  height: 848px;
+  position: fixed;
+  z-index: 2;
+}
+
+nav ul li a i {
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  padding: 8px 8px 8px 12px;
+}
+
+nav ul li {
+  transition: all 0.25s;
+}
+
+nav ul {
+  margin-left: -20px;
+}

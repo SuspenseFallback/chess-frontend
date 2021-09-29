@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Play against AI</title>
+    <link rel="stylesheet" href="css/chessboard-1.0.0.min.css" />
+    <link rel="stylesheet" href="./styles/ai.css" />
+    <link rel="stylesheet" href="./styles/nav.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="../js/chessboard-1.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.9.3/chess.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/ecca769c0e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="holder">
+      <nav>
+        <div class="links">
+          <ul>
+            <li>
+              <a href="" class="home"><i class="fas fa-home"></i></a>
+            </li>
+            <li>
+              <a href="" class="play"><i class="fas fa-play"></i></a>
+            </li>
+            <li>
+              <a href="" class="puzzles"><i class="fas fa-puzzle-piece"></i></a>
+            </li>
+            <li>
+              <a href="" class="study"><i class="fas fa-book"></i></a>
+            </li>
+            <li>
+              <a href="" class="study"><i class="fas fa-cog"></i></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <main>
+      <div id="board1" style="width: 500px"></div>
+      <p class="rating">Depth 3: 1000 rated elo</p>
+      <p class="rating">Depth 4: ? rated elo</p>
+      <button class="undo">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="redo">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </main>
+    <script src="./web/index.js" type="module"></script>
+    <script src="./web/nav.js" type="module"></script>
+  </body>
+</html>
