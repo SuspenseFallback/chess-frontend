@@ -1,22 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;600&display=swap");
 
 body {
   margin: 0;
   padding: 0;
 }
 
-nav ul li a {
+nav .linklist .link a {
   color: #000;
   text-decoration: none;
   font-family: "Lato";
 }
 
-nav ul li:hover {
+nav .linklist .link.normal:hover {
   background-color: rgba(0, 108, 180, 0.842);
 }
 
-nav ul li {
+nav .linklist .link {
   list-style: none;
   margin-left: -20px;
   padding-left: 2px;
@@ -27,7 +27,7 @@ nav ul li {
 }
 
 nav {
-  background-color: rgba(0, 153, 255, 0.842);
+  background-color: rgba(0, 153, 255, 0.904);
   width: 50px;
   top: -17px;
   height: 848px;
@@ -35,17 +35,90 @@ nav {
   z-index: 2;
 }
 
-nav ul li a i {
+nav .linklist .link a i {
   color: #fff;
   text-align: center;
   font-size: 22px;
   padding: 8px 8px 8px 12px;
 }
 
-nav ul li {
+nav .linklist .link {
   transition: all 0.25s;
 }
 
-nav ul {
+.sidemenu li:hover {
+  background-color: rgba(0, 109, 182, 0.897);
+}
+
+nav .linklist {
   margin-left: -20px;
+}
+
+.sidemenu {
+  margin-left: 3.4%;
+  margin-top: -2.9%;
+  position: fixed;
+  background-color: rgba(0, 153, 255, 0.986);
+  width: 15%;
+  height: 100%;
+  z-index: 2;
+}
+
+.sidemenu li {
+  list-style: none;
+  padding: 8px;
+  width: 111%;
+  margin-left: -40px;
+  font-family: "Lato";
+  color: #fff;
+  transition: all 0.25s;
+}
+
+.sidemenu li a {
+  font-family: "Lato";
+  color: #fff;
+}
+
+.sidemenu .homemenu:hover,
+.sidemenu .playmenu:hover,
+.sidemenu .puzzlesmenu:hover,
+.sidemenu .studymenu:hover,
+.sidemenu .settingsmenu:hover {
+  background-color: rgba(0, 122, 204, 0.897);
+}
+
+.invisible {
+  display: none;
+}
+
+.playmenu {
+  margin-top: -6.2%;
+}
+
+.puzzlesmenu {
+  margin-top: -9.5%;
+}
+
+.studymenu {
+  margin-top: -12.8%;
+}
+
+.settingsmenu {
+  margin-top: -16.1%;
+}
+
+.playmenu li a {
+  color: #fff;
+}
+
+.signuplink,
+.loginlink,
+.logoutlink {
+  background-color: rgb(255, 148, 77);
+}
+
+.signuplink:hover,
+.loginlink:hover,
+.logoutlink:hover {
+  background-color: rgb(236, 94, 0);
 }

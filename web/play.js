@@ -1,6 +1,20 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyBw_iSpDopbvgkyaXWiEjkf28uoIdTDPnY",
+  authDomain: "chess-24c73.firebaseapp.com",
+  projectId: "chess-24c73",
+  storageBucket: "chess-24c73.appspot.com",
+  messagingSenderId: "173816910133",
+  appId: "1:173816910133:web:b4ad73167b0feb6e613c7c",
+  measurementId: "G-CXCEY5345Q",
+};
+
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+let auth = firebase.auth();
+
 var board;
 var game = new Chess();
-let socket = io("https://peaceful-ridge-17195.herokuapp.com");
+let socket = io("chess-24c73.firebaseapp.com");
 let joinGame = document.querySelector(".join");
 let gameStart = false;
 let color = null;

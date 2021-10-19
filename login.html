@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Play against AI</title>
-    <link rel="stylesheet" href="css/chessboard-1.0.0.min.css" />
-    <link rel="stylesheet" href="./styles/ai.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
     <link rel="stylesheet" href="./styles/nav.css" />
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://suspensefallback.github.io/chess-frontend/js/chessboard-1.0.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.9.3/chess.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./styles/login.css" />
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js"></script>
     <script
       src="https://kit.fontawesome.com/ecca769c0e.js"
       crossorigin="anonymous"
@@ -18,9 +19,7 @@
       type="image/png"
       href="https://suspensefallback.github.io/chess-frontend/img/chesspieces/wikipedia/wN.png"
     />
-    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
   </head>
   <body>
     <div class="holder">
@@ -40,9 +39,14 @@
             <li class="link normal playlink">
               <a href="" class="play"><i class="fas fa-play"></i></a>
               <ul class="playmenu sidemenu invisible">
-                <a href="/chess-frontend/play.html"><li>Live chess</li> </a>
+                <a
+                  href="https://suspensefallback.github.io/chess-frontend/play.html"
+                  ><li>Live chess</li>
+                </a>
                 <li>Daily chess</li>
-                <a href="play.html">
+                <a
+                  href="https://suspensefallback.github.io/chess-frontend/play.html"
+                >
                   <li>Computer</li>
                 </a>
                 <li>Variants</li>
@@ -88,26 +92,42 @@
                 ><i class="fas fa-sign-in-alt"></i
               ></a>
             </li>
-            <li class="link logoutlink">
+            <li class="link logoutlink invisible">
               <a href="" class="login"><i class="fas fa-sign-out-alt"></i></a>
             </li>
           </ul>
         </div>
       </nav>
     </div>
-    <main>
-      <div id="board1" style="width: 500px"></div>
-      <p class="rating">Depth 3: 1000 rated elo</p>
-      <p class="rating">Depth 4: ? rated elo</p>
-      <button class="undo">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <button class="redo">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-      <p class="eval">Eval:</p>
-    </main>
-    <script src="./web/ai.js" type="module"></script>
-    <script src="./web/nav.js" type="module"></script>
+    <div class="splitscreen">
+      <div class="right"></div>
+      <div class="left">
+        <h1>Login</h1>
+        <p class="error"></p>
+        <div class="data text">
+          <label for="email">Email<span> </span></label><br />
+          <input
+            onkeydown="emailChange()"
+            type="text"
+            name="email"
+            id="email"
+            placeholder="johndoe@website.com"
+          />
+        </div>
+        <div class="data text">
+          <label for="password">Password</label><br />
+          <input
+            onkeydown="passwordChange()"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password must contain at least 6 characters."
+          />
+        </div>
+        <button class="submit" onclick="login()" disabled>Submit</button>
+      </div>
+    </div>
+    <script src="web/login.js"></script>
+    <script src="web/nav.js"></script>
   </body>
 </html>

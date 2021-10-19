@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <link rel="stylesheet" href="./styles/nav.css" />
+    <link rel="stylesheet" href="./styles/signup.css" />
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js"></script>
+    <script
+      src="https://kit.fontawesome.com/ecca769c0e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://suspensefallback.github.io/chess-frontend/img/chesspieces/wikipedia/wN.png"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
+  </head>
+  <body>
+    <div class="holder">
+      <nav>
+        <div class="links">
+          <ul class="linklist">
+            <li class="link normal homelink">
+              <a href="" class="home"><i class="fas fa-home"></i></a>
+              <ul class="homemenu sidemenu invisible">
+                <li>About</li>
+                <li>Dashboard</li>
+                <li>Stats</li>
+                <li>Awards</li>
+                <li>Messages</li>
+              </ul>
+            </li>
+            <li class="link normal playlink">
+              <a href="" class="play"><i class="fas fa-play"></i></a>
+              <ul class="playmenu sidemenu invisible">
+                <a
+                  href="https://suspensefallback.github.io/chess-frontend/play.html"
+                  ><li>Live chess</li>
+                </a>
+                <li>Daily chess</li>
+                <a
+                  href="https://suspensefallback.github.io/chess-frontend/play.html"
+                >
+                  <li>Computer</li>
+                </a>
+                <li>Variants</li>
+                <li>Archive</li>
+              </ul>
+            </li>
+            <li class="link normal puzzleslink">
+              <a href="" class="puzzles"><i class="fas fa-puzzle-piece"></i></a>
+              <ul class="puzzlesmenu sidemenu invisible">
+                <li>Puzzles</li>
+                <li>Puzzle rush</li>
+                <li>Tactics</li>
+                <li>Games</li>
+              </ul>
+            </li>
+            <li class="link normal studylink">
+              <a href="" class="study"><i class="fas fa-book"></i></a>
+              <ul class="studymenu sidemenu invisible">
+                <li>Articles</li>
+                <li>Videos</li>
+                <li>Analysis</li>
+                <li>Openings</li>
+                <li>Endgames</li>
+              </ul>
+            </li>
+            <li class="link normal settingslink">
+              <a href="" class="settings"><i class="fas fa-cog"></i></a>
+              <ul class="settingsmenu sidemenu invisible">
+                <li>Profile</li>
+                <li>Theme</li>
+                <li>Board and pieces</li>
+                <li>Live chess</li>
+                <li>Change password</li>
+              </ul>
+            </li>
+            <li class="link signuplink">
+              <a href="/chess-frontend/signup.html" class="signup"
+                ><i class="fas fa-user-plus"></i
+              ></a>
+            </li>
+            <li class="link loginlink">
+              <a href="/chess-frontend/login.html" class="login"
+                ><i class="fas fa-sign-in-alt"></i
+              ></a>
+            </li>
+            <li class="link logoutlink invisible">
+              <a href="" class="login"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="splitscreen">
+      <div class="left">
+        <!-- <h1>Sign up for access to all features.</h1>
+        <h3>0 players</h3>
+        <h3>0 current games</h3> -->
+      </div>
+      <div class="right">
+        <h1>Sign up</h1>
+        <p class="error"></p>
+        <div class="data text">
+          <label for="username">Username</label><br />
+          <input
+            onkeydown="usernameChange()"
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Username must be between 3 and 15 characters."
+          />
+        </div>
+        <div class="data text">
+          <label for="email">Email<span> </span></label><br />
+          <input
+            onkeydown="emailChange()"
+            type="text"
+            name="email"
+            id="email"
+            placeholder="johndoe@website.com"
+          />
+        </div>
+        <div class="data text">
+          <label for="password">Password</label><br />
+          <input
+            onkeydown="passwordChange()"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password must contain at least 6 characters."
+          />
+          <!-- <ul>
+            <li class="char false">
+              <i class="fas fa-times"></i>Password must contain at least 6
+              characters.
+            </li>
+            <li class="lowercase false">
+              <i class="fas fa-times"></i>Password must contain a lowercase
+              letter.
+            </li>
+            <li class="uppercase false">
+              <i class="fas fa-times"></i>Password must contain a uppercase
+              letter.
+            </li>
+            <li class="number false">
+              <i class="fas fa-times"></i>Password must contain a number.
+            </li>
+          </ul> -->
+        </div>
+        <!-- <div class="data checkbox">
+          <input type="checkbox" name="terms" id="terms" />
+          <label for="terms">I agree to the terms and conditions.</label>
+        </div> -->
+        <div class="data checkbox">
+          <input type="checkbox" name="newsletter" id="newsletter" />
+          <label for="newsletter"
+            >Sign up for newsletter, emails and notifications.</label
+          >
+        </div>
+        <button class="submit" onclick="register()" disabled>Submit</button>
+      </div>
+    </div>
+    <script src="web/signup.js"></script>
+    <script src="web/nav.js"></script>
+  </body>
+</html>

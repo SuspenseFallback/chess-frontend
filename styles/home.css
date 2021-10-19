@@ -1,0 +1,188 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+main {
+  height: 100%;
+  display: grid;
+  grid-gap: 1%;
+  z-index: 1;
+}
+
+.bullet {
+  display: flex;
+  float: right;
+  justify-content: center;
+  grid-column: 6;
+  grid-row: 1;
+}
+
+.bullet i {
+  font-size: 4rem;
+  color: rgb(58, 58, 58);
+}
+
+.blitz {
+  display: flex;
+  justify-content: center;
+  grid-column: 6;
+  grid-row: 2;
+}
+
+.blitz i {
+  font-size: 4rem;
+  color: yellow;
+}
+
+.rapid {
+  display: flex;
+  justify-content: center;
+  grid-column: 6;
+  grid-row: 3;
+}
+
+.rapid i {
+  font-size: 4rem;
+  color: rgb(21, 73, 0);
+}
+
+.classical {
+  display: flex;
+  justify-content: center;
+  grid-column: 6;
+  grid-row: 4;
+}
+
+.classical i {
+  font-size: 4rem;
+  color: rgb(0, 47, 255);
+}
+
+.puzzle {
+  display: flex;
+  float: right;
+  justify-content: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.puzzle i {
+  font-size: 4rem;
+  color: rgb(255, 136, 0);
+  transition: all 0.25s;
+}
+
+.videos {
+  display: flex;
+  float: right;
+  justify-content: center;
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.videos i {
+  font-size: 4rem;
+  color: rgb(255, 255, 255);
+}
+
+.articles {
+  display: flex;
+  float: right;
+  justify-content: center;
+  grid-row: 2;
+}
+
+.articles i {
+  font-size: 4rem;
+  color: rgb(255, 255, 255);
+}
+
+.drills {
+  display: flex;
+  float: right;
+  justify-content: center;
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.drills i {
+  font-size: 4rem;
+  color: rgb(255, 0, 0);
+}
+
+.lessons {
+  display: flex;
+  float: right;
+  justify-content: center;
+  grid-column: 4;
+  grid-row: 2;
+}
+
+.messages i {
+  font-size: 4rem;
+  color: rgb(255, 255, 255);
+}
+
+.messages {
+  display: flex;
+  float: right;
+  justify-content: center;
+  grid-column: 5;
+  grid-row: 1;
+}
+
+.friends i {
+  font-size: 4rem;
+  color: rgb(255, 255, 255);
+}
+
+.friends {
+  display: flex;
+  float: right;
+  justify-content: center;
+  grid-column: 5;
+  grid-row: 2;
+}
+
+.lessons i {
+  font-size: 4rem;
+  color: rgb(255, 255, 255);
+}
+
+.quickaccess {
+  background-color: rgba(0, 153, 255, 0.726);
+  align-items: center;
+  transition: all 0.25s;
+}
+
+.quickaccess i {
+  transition: all 0.5s;
+}
+
+.quickaccess:hover {
+  background-color: rgba(1, 81, 134, 0.726);
+}
+
+.quickaccess2 {
+  transition: all 0.25s;
+  background-color: rgba(103, 255, 57, 0.849);
+  align-items: center;
+}
+
+.quickaccess2:hover {
+  background-color: rgba(46, 197, 0, 0.849);
+}
+
+.puzzle:hover i {
+  color: rgb(163, 87, 0);
+}
+
+.quickaccess:hover i {
+  margin-top: -30%;
+}
