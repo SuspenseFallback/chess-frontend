@@ -181,8 +181,6 @@ let minimax = function (depth, game, alpha, beta, isMaximisingPlayer) {
           resolve(bestMove);
         }
       }
-      console.log(-evaluateBoard(fenToArrays(game.fen())));
-      resolve(-evaluateBoard(fenToArrays(game.fen())));
     } else {
       let bestMove = 9999;
       for (let i = 0; i < newGameMoves.length; i++) {
@@ -204,8 +202,6 @@ let minimax = function (depth, game, alpha, beta, isMaximisingPlayer) {
           resolve(bestMove);
         }
       }
-      console.log(-evaluateBoard(fenToArrays(game.fen())));
-      resolve(-evaluateBoard(fenToArrays(game.fen())));
     }
   });
 };
