@@ -86,3 +86,39 @@
 .heading.two {
   margin-top: 8%;
 }
+
+.highlight {
+  background-color: #ff4e4e91;
+}
+
+.highlight2 {
+  background-color: #aa000091;
+}
+
+.highlightalt {
+  background-color: #4ef0ff91;
+}
+
+.highlightalt2 {
+  background-color: #00889491;
+}
+
+.highlightctrl {
+  background-color: #ffc14eb9;
+}
+
+.highlightctrl2 {
+  background-color: #df9800b7;
+}
+
+.highlightshift {
+  background-color: #a1ff4e91;
+}
+
+.highlightshift2 {
+  background-color: #4aa00091;
+}
+
+.square-55d63 {
+  transition: all 0.25s;
+}

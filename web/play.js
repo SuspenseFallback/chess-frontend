@@ -14,7 +14,7 @@ let auth = firebase.auth();
 
 var board;
 var game = new Chess();
-let socket = io("chess-24c73.firebaseapp.com");
+let socket = io("https://whispering-forest-54439.herokuapp.com/");
 let joinGame = document.querySelector(".join");
 let gameStart = false;
 let color = null;
@@ -99,3 +99,99 @@ var cfg = {
   onSnapEnd: onSnapEnd,
 };
 board = ChessBoard("board1", cfg);
+
+let columns = ["a", "b", "c", "d", "e", "f", "g", "h"];
+
+let arrow = null;
+
+columns.forEach((column) => {
+  for (let i = 1; i <= 8; i++) {
+    let el = document.querySelector(`.square-${column + i}`);
+
+    el.addEventListener("arrow", (e) => {
+      console.log("drag", e);
+    });
+
+    el.addEventListener("mouseover", () => {
+      console.log("hover");
+      var alt = false;
+      el.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        console.log(e);
+
+        if (
+          el.classList.contains("highlightalt") ||
+          el.classList.contains("highlightalt2") ||
+          el.classList.contains("highlightctrl") ||
+          el.classList.contains("highlightctrl2") ||
+          el.classList.contains("highlightshift") ||
+          el.classList.contains("highlightshift2")
+        ) {
+          if (el.classList.contains("highlightalt")) {
+            el.classList.toggle("highlightalt");
+          } else if (el.classList.contains("highlightalt2")) {
+            el.classList.toggle("highlightalt2");
+          } else if (el.classList.contains("highlightctrl")) {
+            el.classList.toggle("highlightctrl");
+          } else if (el.classList.contains("highlightctrl2")) {
+            el.classList.toggle("highlightctrl2");
+          } else if (el.classList.contains("highlightshift")) {
+            el.classList.toggle("highlightshift");
+          } else if (el.classList.contains("highlightshift2")) {
+            el.classList.toggle("highlightshift2");
+          }
+        }
+        if (game.square_color(column + i) == "light" && e.altKey) {
+          el.classList.toggle("highlightalt");
+        } else if (game.square_color(column + i) == "dark" && e.altKey) {
+          el.classList.toggle("highlightalt2");
+        } else if (game.square_color(column + i) == "light" && e.ctrlKey) {
+          el.classList.toggle("highlightctrl");
+        } else if (game.square_color(column + i) == "dark" && e.ctrlKey) {
+          el.classList.toggle("highlightctrl2");
+        } else if (game.square_color(column + i) == "light" && e.shiftKey) {
+          el.classList.toggle("highlightshift");
+        } else if (game.square_color(column + i) == "dark" && e.shiftKey) {
+          el.classList.toggle("highlightshift2");
+        } else if (game.square_color(column + i) == "light") {
+          el.classList.toggle("highlight");
+        } else if (game.square_color(column + i) == "dark") {
+          el.classList.toggle("highlight2");
+        }
+      });
+    });
+  }
+});
+
+document.querySelector("body").addEventListener("click", () => {
+  columns.forEach((column) => {
+    for (let i = 1; i <= 8; i++) {
+      let el = document.querySelector(`.square-${column + i}`);
+
+      if (el.classList.contains("highlight")) {
+        el.classList.toggle("highlight");
+      }
+      if (el.classList.contains("highlight2")) {
+        el.classList.toggle("highlight2");
+      }
+      if (el.classList.contains("highlightalt")) {
+        el.classList.toggle("highlightalt");
+      }
+      if (el.classList.contains("highlightalt2")) {
+        el.classList.toggle("highlightalt2");
+      }
+      if (el.classList.contains("highlightctrl")) {
+        el.classList.toggle("highlightctrl");
+      }
+      if (el.classList.contains("highlightctrl2")) {
+        el.classList.toggle("highlightctrl2");
+      }
+      if (el.classList.contains("highlightshift")) {
+        el.classList.toggle("highlightshift");
+      }
+      if (el.classList.contains("highlightshift2")) {
+        el.classList.toggle("highlightshift2");
+      }
+    }
+  });
+});

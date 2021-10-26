@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 html {
   height: 100%;
 }
@@ -40,6 +42,7 @@ main {
 
 .rapid {
   display: flex;
+  float: right;
   justify-content: center;
   grid-column: 6;
   grid-row: 3;
@@ -118,7 +121,6 @@ main {
 
 .lessons {
   display: flex;
-  float: right;
   justify-content: center;
   grid-column: 4;
   grid-row: 2;
@@ -126,7 +128,13 @@ main {
 
 .messages i {
   font-size: 4rem;
+  justify-self: center;
   color: rgb(255, 255, 255);
+}
+
+.messages p {
+  justify-self: center;
+  margin-left: -1%;
 }
 
 .messages {
@@ -161,7 +169,9 @@ main {
   transition: all 0.25s;
 }
 
-.quickaccess i {
+.quickaccess .content,
+.quickaccess2 .content {
+  justify-content: center;
   transition: all 0.5s;
 }
 
@@ -183,6 +193,60 @@ main {
   color: rgb(163, 87, 0);
 }
 
-.quickaccess:hover i {
+.quickaccess:hover .content,
+.quickaccess2:hover .content {
   margin-top: -30%;
+}
+
+.quickaccess p,
+.quickaccess2 p {
+  color: transparent;
+  font-size: 1.2em;
+  align-self: flex-end;
+  position: fixed;
+  font-family: "Montserrat";
+  justify-content: center;
+  transition: all 0.5s;
+}
+
+.rapid:hover {
+  display: flex;
+  justify-content: center;
+  grid-column: 6;
+  grid-row: 3;
+}
+
+.rapid:hover .content i {
+  top: -30%;
+}
+
+.quickaccess .content p {
+  color: transparent;
+  transition: all 0.5s;
+}
+
+.quickaccess:hover .content p,
+.quickaccess2:hover .content p {
+  color: white;
+}
+
+.spinner {
+  width: 50px;
+  height: 43px;
+  border-radius: 50%;
+  border-top: 7px solid #fff;
+  border-left: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 7px solid transparent;
+  transform: rotate(0deg);
+  animation: spin infinite 1.5s;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
