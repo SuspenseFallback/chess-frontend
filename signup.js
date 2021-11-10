@@ -123,6 +123,12 @@ function register() {
   var password = document.querySelector("#password").value;
   var newsletter = document.querySelector("#newsletter").value;
 
+  var now = new Date();
+  var start = new Date(now.getFullYear(), 0, 0);
+  var diff = now - start;
+  var oneDay = 1000 * 60 * 60 * 24;
+  var day = Math.floor(diff / oneDay);
+
   auth
     .createUserWithEmailAndPassword(email, password)
     .then(() => {
@@ -134,7 +140,12 @@ function register() {
           username: username,
           email: email,
           password: password,
-          lastlogin: Date.now(),
+          bullet: 800,
+          blitz: 800,
+          rapid: 800,
+          classical: 800,
+          newsletter: newsletter,
+          lastlogin: day,
         })
         .then(() => {
           window.location.replace("/ai.html");

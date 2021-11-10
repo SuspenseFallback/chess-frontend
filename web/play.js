@@ -10,7 +10,30 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig);
+let db = firebase.firestore();
 let auth = firebase.auth();
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log(user.uid);
+    db.collection("user")
+      .doc(user.uid)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          document.querySelector(".user>.username").innerHTML =
+            doc.data().username;
+        } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+        }
+      })
+      .catch((error) => {
+        console.log("Error getting document:", error);
+      });
+  } else {
+  }
+});
 
 var board;
 var game = new Chess();
@@ -107,10 +130,6 @@ let arrow = null;
 columns.forEach((column) => {
   for (let i = 1; i <= 8; i++) {
     let el = document.querySelector(`.square-${column + i}`);
-
-    el.addEventListener("arrow", (e) => {
-      console.log("drag", e);
-    });
 
     el.addEventListener("mouseover", () => {
       console.log("hover");

@@ -1,12 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
 
 .join {
-  margin-top: 40%;
+  display: block;
+  margin-left: 2.5%;
   position: absolute;
-  width: 92%;
-  margin-left: 4%;
-  height: 6%;
-  align-items: center;
   border: 1px solid rgb(0, 60, 255);
   background-color: rgb(0, 132, 255);
   padding: 8px;
@@ -27,64 +24,17 @@
 }
 
 #board1 {
-  margin-left: 42%;
-  margin-top: 4.5%;
-  position: fixed;
+  grid-row: 2;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  margin-top: -6%;
 }
 
 .menu {
-  position: fixed;
-  margin-left: 5%;
   background-color: rgb(184, 222, 255);
-  display: flex;
-  width: 30%;
-  height: 800px;
-}
-
-.timecontrol {
-  position: absolute;
-  height: 5%;
-  border-radius: 7px;
-  width: 92%;
-  background-color: rgba(168, 168, 168, 0.616);
-  border: 2px solid rgba(119, 119, 119, 0.623);
-  margin-left: 4%;
-  margin-top: 12%;
-}
-
-.timecontrol .text {
-  margin-left: 15px;
-  font-family: "Montserrat";
-  font-size: 16px;
-  margin-top: 2.7%;
-  color: rgb(56, 56, 56);
-}
-
-.menu i#caret1 {
-  margin-left: 90%;
-  margin-top: 15.5%;
-}
-
-.menu #increment {
-  margin-top: 28%;
-}
-
-.menu #caret2 {
-  margin-top: 31.5%;
-  margin-left: -3.5%;
-}
-
-.heading {
-  position: fixed;
-  font-family: "Montserrat";
-  text-align: center;
-  width: 30.5%;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.heading.two {
-  margin-top: 8%;
+  grid-column: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 
 .highlight {
@@ -121,4 +71,27 @@
 
 .square-55d63 {
   transition: all 0.25s;
+}
+
+main {
+  display: grid;
+  grid-gap: 5%;
+  margin-left: 5%;
+  margin-top: 5%;
+  width: 100%;
+}
+
+.user {
+  grid-row: 3;
+  grid-column: 3;
+  margin-top: -4%;
+  font-family: "Montserrat";
+}
+
+.user .username {
+  font-size: 18px;
+}
+
+.opponent {
+  grid-row: 1;
 }

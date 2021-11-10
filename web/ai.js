@@ -143,9 +143,7 @@ let minimax = function (
         game.undo();
         continue;
       }
-      if (-evaluateBoard(fenToArrays(game.fen())) > currentScore) {
-        console.log(newGameMoves[i]);
-        console.log(currentScore);
+      if (game.in_checkmate()) {
         game.undo();
         continue;
       }
@@ -170,9 +168,7 @@ let minimax = function (
       if (game.in_stalemate()) {
         continue;
       }
-      if (-evaluateBoard(fenToArrays(game.fen())) > currentScore) {
-        console.log(newGameMoves[i]);
-        console.log(currentScore);
+      if (game.in_checkmate()) {
         game.undo();
         continue;
       }
@@ -337,17 +333,6 @@ let calculatePieces = function () {
       }
     }
   }
-};
-
-let getIsolatedPawns = function () {
-  let isolatedPawns = [];
-  calculatePieces();
-
-  pieces.forEach((piece) => {
-    if (piece.split("")[0] == piece.split("")[0].toLowerCase()) {
-      // let;
-    }
-  });
 };
 
 let getBestMove = function (game) {

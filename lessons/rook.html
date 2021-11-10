@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Play online chess</title>
-    <link rel="stylesheet" href="css/chessboard-1.0.0.min.css" />
-    <link rel="stylesheet" href="./styles/play.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Rook</title>
+    <link rel="stylesheet" href="../css/chessboard-1.0.0.min.css" />
+    <link rel="stylesheet" href="../styles/lesson.css" />
+    <link rel="stylesheet" href="../styles/nav.css" />
     <link
       rel="stylesheet"
-      href="https://suspensefallback.github.io/chess-frontend//styles/nav.css"
+      href="https://suspensefallback.github.io/chess-frontend/styles/nav.css"
     />
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://suspensefallback.github.io/chess-frontend/js/chessboard-1.0.0.min.js"></script>
@@ -21,15 +25,15 @@
       type="image/png"
       href="https://suspensefallback.github.io/chess-frontend/img/chesspieces/wikipedia/wN.png"
     />
+    <script
+      src="https://cdn.socket.io/4.2.0/socket.io.min.js"
+      integrity="sha384-PiBR5S00EtOj2Lto9Uu81cmoyZqR57XcOna1oAuVuIEjzj0wpqDVfD0JA9eXlRsj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js"></script>
   </head>
-  <script
-    src="https://cdn.socket.io/4.2.0/socket.io.min.js"
-    integrity="sha384-PiBR5S00EtOj2Lto9Uu81cmoyZqR57XcOna1oAuVuIEjzj0wpqDVfD0JA9eXlRsj"
-    crossorigin="anonymous"
-  ></script>
-  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js"></script>
   <body>
     <div class="holder">
       <nav>
@@ -108,31 +112,15 @@
         </div>
       </nav>
     </div>
-    <main>
-      <div class="oppenent">
-        <div class="profilepic"></div>
-        <p class="username"></p>
-        <div class="time"></div>
-      </div>
-      <div class="menu">
-        <button class="join">Join game</button>
-      </div>
-      <!-- <div class="buttons">
-        <button class="resign"></button>
-        <button class="draw"></button>
-        <button class="takeback"></button>
-      </div> -->
-      <div id="board1" style="width: 650px"></div>
-      <div class="user">
-        <div class="profilepic"></div>
-        <p class="username"></p>
-        <div class="time"></div>
-      </div>
-
-      <div class="info"></div>
-    </main>
-    <canvas id="c"></canvas>
-    <script src="./web/play.js" type="module"></script>
-    <script src="./web/nav.js" type="module"></script>
+    <div id="board1"></div>
+    <div class="lesson">
+      <h3 class="title">Rooks</h3>
+      <p class="text"></p>
+      <button class="practice">Go to exercises</button>
+      <button class="prev btn">Previous</button>
+      <button class="next btn">Next</button>
+    </div>
+    <script src="../web/lessons/rook.js"></script>
+    <script src="../web/nav.js"></script>
   </body>
 </html>
