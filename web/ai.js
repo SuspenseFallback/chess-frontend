@@ -1,3 +1,7 @@
+let piecemove = new Audio(
+  "https://suspensefallback.github.io/chess-frontend/music/piecemove.wav"
+);
+
 const firebaseConfig = {
   apiKey: "AIzaSyBw_iSpDopbvgkyaXWiEjkf28uoIdTDPnY",
   authDomain: "chess-24c73.firebaseapp.com",
@@ -387,6 +391,8 @@ let onDrop = function (source, target) {
 
   if (move === null) {
     return "snapback";
+  } else {
+    piecemove.play();
   }
 
   window.setTimeout(makeBestMove, 250);

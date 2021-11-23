@@ -4,10 +4,100 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Error - 404!</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://suspensefallback.github.io/chess-frontend/img/chesspieces/wikipedia/wN.png"
+    />
+    <link rel="stylesheet" href="./styles/404.css" />
+    <link rel="stylesheet" href="./styles/nav.css" />
+    <script
+      src="https://kit.fontawesome.com/ecca769c0e.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>We're sorry</h1>
-    <p>The page you are looking for does not exist.</p>
+    <div class="holder">
+      <nav>
+        <div class="links">
+          <ul class="linklist">
+            <li class="link normal homelink">
+              <a href="" class="home"><i class="fas fa-home"></i></a>
+              <ul class="homemenu sidemenu invisible">
+                <li>About</li>
+                <li>Dashboard</li>
+                <li>Stats</li>
+                <li>Awards</li>
+                <li>Messages</li>
+              </ul>
+            </li>
+            <li class="link normal playlink">
+              <a href="" class="play"><i class="fas fa-play"></i></a>
+              <ul class="playmenu sidemenu invisible">
+                <a href="/chess-frontend/play.html"><li>Live chess</li> </a>
+                <li>Daily chess</li>
+                <a href="play.html">
+                  <li>Computer</li>
+                </a>
+                <li>Variants</li>
+                <li>Archive</li>
+              </ul>
+            </li>
+            <li class="link normal puzzleslink">
+              <a href="" class="puzzles"><i class="fas fa-puzzle-piece"></i></a>
+              <ul class="puzzlesmenu sidemenu invisible">
+                <li>Puzzles</li>
+                <li>Puzzle rush</li>
+                <li>Tactics</li>
+                <li>Games</li>
+              </ul>
+            </li>
+            <li class="link normal studylink">
+              <a href="" class="study"><i class="fas fa-book"></i></a>
+              <ul class="studymenu sidemenu invisible">
+                <li>Articles</li>
+                <li>Videos</li>
+                <li>Analysis</li>
+                <li>Openings</li>
+                <li>Endgames</li>
+              </ul>
+            </li>
+            <li class="link normal settingslink">
+              <a href="" class="settings"><i class="fas fa-cog"></i></a>
+              <ul class="settingsmenu sidemenu invisible">
+                <li>Profile</li>
+                <li>Theme</li>
+                <li>Board and pieces</li>
+                <li>Live chess</li>
+                <li>Change password</li>
+              </ul>
+            </li>
+            <li class="link signuplink">
+              <a href="/chess-frontend/signup.html" class="signup"
+                ><i class="fas fa-user-plus"></i
+              ></a>
+            </li>
+            <li class="link loginlink">
+              <a href="/chess-frontend/login.html" class="login"
+                ><i class="fas fa-sign-in-alt"></i
+              ></a>
+            </li>
+            <li class="link logoutlink">
+              <a href="" class="login"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <h1 class="f404f">404?!</h1>
+    <p class="f404f">The page you are looking for does not exist.</p>
+    <a
+      class="f404f"
+      href="https://suspensefallback.github.io/chess-frontend/home.html"
+    >
+      Go back to the homepage
+    </a>
+    <script src="./web/nav.js"></script>
   </body>
 </html>
