@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Play against AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/chessboard-1.0.0.min.css" />
+    <meta name="description" content="A chess AI to play against." />
     <link rel="stylesheet" href="./styles/ai.css" />
     <link rel="stylesheet" href="./styles/nav.css" />
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://suspensefallback.github.io/chess-frontend/js/chessboard-1.0.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.9.3/chess.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/stockfish@14.1.0/src/stockfish.min.js"></script>
     <meta
       http-equiv="origin-trial"
       content="AiUXOP5iBHE8GATxdZXuxVogTobwdNyD3m4ryRcoGDoHnYuRx2jaMDd+ijcUVIvcJfgYxVJL2dyumWprDsN/KgAAAACEeyJvcmlnaW4iOiJodHRwczovL3N1c3BlbnNlZmFsbGJhY2suZ2l0aHViLmlvOjQ0MyIsImZlYXR1cmUiOiJVbnJlc3RyaWN0ZWRTaGFyZWRBcnJheUJ1ZmZlciIsImV4cGlyeSI6MTY1ODg3OTk5OSwiaXNTdWJkb21haW4iOnRydWV9"
@@ -26,11 +26,6 @@
     <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js"></script>
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9755342038191695"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
     <div class="holder">
@@ -107,17 +102,8 @@
     </div>
     <main>
       <div id="board1" style="width: 500px"></div>
-      <p class="rating">Depth 3: 1000 rated elo</p>
-      <p class="rating">Depth 4: ? rated elo</p>
-      <button class="undo">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <button class="redo">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-      <p class="eval">Eval:</p>
     </main>
-    <script src="./web/ai.js" type="module"></script>
+    <script src="./web/stockfishai.js" type="module"></script>
     <script src="./web/nav.js" type="module"></script>
   </body>
 </html>
