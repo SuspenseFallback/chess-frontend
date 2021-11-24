@@ -1,6 +1,8 @@
-let piecemove = new Audio(
-  "https://suspensefallback.github.io/chess-frontend/music/piecemove.wav"
-);
+let piecemove = new Audio("/chess-frontend/music/piecemove.wav");
+
+var stockfish = new Worker("/chess-frontend/stockfish.js");
+
+console.log(stockfish);
 
 const firebaseConfig = {
   apiKey: "AIzaSyBw_iSpDopbvgkyaXWiEjkf28uoIdTDPnY",
@@ -317,8 +319,10 @@ let onDragStart = function (source, piece, position, orientation) {
 
 let makeBestMove = function () {
   let bestMove = getBestMove(game);
+  console.log(getBestMove(game));
   game.move(bestMove);
   board.position(game.fen());
+  piecemove.play();
   if (game.game_over()) {
     alert("Game over");
   }
@@ -363,7 +367,7 @@ let getBestMove = function (game) {
           }
         } else {
           console.log("not opening");
-          let depth = 3;
+          let depth = 2;
 
           let bestMove = minimaxRoot(depth, game, true);
 
@@ -374,7 +378,7 @@ let getBestMove = function (game) {
       });
   } else {
     console.log("not opening");
-    let depth = 3;
+    let depth = 2;
 
     let bestMove = minimaxRoot(depth, game, true);
 
