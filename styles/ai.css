@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-#board1 {
-  margin-left: 31%;
-  margin-top: 100px;
-}
-
 .undo {
   margin-left: 75%;
 }
