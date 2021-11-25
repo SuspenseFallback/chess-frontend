@@ -158,7 +158,10 @@ function engineGame(options) {
       if (turn != playerColor) {
         uciCmd("position startpos moves" + get_moves());
         uciCmd("position startpos moves" + get_moves(), evaler);
-        evaluation_el.textContent = "";
+
+        if (evaluation_el.textContent) {
+          evaluation_el.textContent = "";
+        }
         uciCmd("eval", evaler);
 
         if (time && time.wtime) {
@@ -232,7 +235,9 @@ function engineGame(options) {
         game.move({ from: match[1], to: match[2], promotion: match[3] });
         prepareMove();
         uciCmd("eval", evaler);
-        evaluation_el.textContent = "";
+        if (evaluation_el.textContent) {
+          evaluation_el.textContent = "";
+        }
         //uciCmd("eval");
         /// Is it sending feedback?
       } else if ((match = line.match(/^info .*\bdepth (\d+) .*\bnps (\d+)/))) {
