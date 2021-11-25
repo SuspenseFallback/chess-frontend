@@ -17,7 +17,6 @@ function engineGame(options) {
   var playerColor = "white";
   var clockTimeoutID = null;
   var isEngineRunning = false;
-  var evaluation_el = document.getElementById("evaluation");
   var announced_game_over;
   // do not pick up pieces if the game is over
   // only pick up pieces for White
@@ -158,10 +157,6 @@ function engineGame(options) {
       if (turn != playerColor) {
         uciCmd("position startpos moves" + get_moves());
         uciCmd("position startpos moves" + get_moves(), evaler);
-
-        if (evaluation_el.textContent) {
-          evaluation_el.textContent = "";
-        }
         uciCmd("eval", evaler);
 
         if (time && time.wtime) {
@@ -207,11 +202,6 @@ function engineGame(options) {
     ) {
       return;
     }
-
-    if (evaluation_el) {
-      evaluation_el.textContent += "\n";
-      evaluation_el.textContent += line;
-    }
   };
 
   engine.onmessage = function (event) {
@@ -235,9 +225,6 @@ function engineGame(options) {
         game.move({ from: match[1], to: match[2], promotion: match[3] });
         prepareMove();
         uciCmd("eval", evaler);
-        if (evaluation_el) {
-          evaluation_el.textContent = "";
-        }
         //uciCmd("eval");
         /// Is it sending feedback?
       } else if ((match = line.match(/^info .*\bdepth (\d+) .*\bnps (\d+)/))) {
