@@ -208,7 +208,7 @@ function engineGame(options) {
       return;
     }
 
-    if (evaluation_el.textContent) {
+    if (evaluation_el) {
       evaluation_el.textContent += "\n";
       evaluation_el.textContent += line;
     }
@@ -235,7 +235,7 @@ function engineGame(options) {
         game.move({ from: match[1], to: match[2], promotion: match[3] });
         prepareMove();
         uciCmd("eval", evaler);
-        if (evaluation_el.textContent) {
+        if (evaluation_el) {
           evaluation_el.textContent = "";
         }
         //uciCmd("eval");
