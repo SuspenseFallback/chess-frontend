@@ -207,8 +207,8 @@ function engineGame(options) {
 
     if (evaluation_el.textContent) {
       evaluation_el.textContent += "\n";
+      evaluation_el.textContent += line;
     }
-    evaluation_el.textContent += line;
   };
 
   engine.onmessage = function (event) {
@@ -266,7 +266,7 @@ function engineGame(options) {
     var move = game.move({
       from: source,
       to: target,
-      promotion: document.getElementById("promote").value,
+      promotion: "q",
     });
 
     // illegal move
