@@ -1,4 +1,11 @@
-# chessboard.js
+# Chess frontend
+
+This is a basic HTML application where you can:
+
+- Play against other players via sockets
+- Play against a simple JavaScript AI chessbot
+
+## chessboard.js
 
 chessboard.js is a JavaScript chessboard component. It depends on [jQuery].
 
